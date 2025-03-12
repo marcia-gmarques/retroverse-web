@@ -21,7 +21,7 @@ const NavBar = () => {
   return (
     <div className='flex justify-center w-full font-bovine sticky'>
         <ul className='flex space-x-6 p-4'>
-            <li  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styling} className='nav-item'>Content</li>
+            <li  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styling} className='nav-item'>Project</li>
             <li  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styling} className='nav-item'>Play-through</li>
             <li  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styling} className='nav-item'>Our Team</li>
             <li  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={styling} className='nav-item'>Exhibitions</li>
