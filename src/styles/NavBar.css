@@ -4,3 +4,11 @@
     font-weight: normal;
     font-style: normal;
 }
+
+.nav-item{
+    color:#bdebfb;
+}
+
+.nav-item:hover{
+    color:#856CAE;
+}

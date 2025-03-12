@@ -34,6 +34,7 @@ body {
   min-height: 100vh;
   background-color: #120926;
   color: antiquewhite;
+  font-family: 'Poppins','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {

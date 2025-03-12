@@ -4,11 +4,13 @@ import './index.css'
 import App from './App.jsx'
 import NavBar from './components/NavBar.jsx'
 import Content from './components/Content.jsx'
+import Playthrough from './components/Playthrough.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <NavBar />
     <Content />
+    <Playthrough />
     <App />
 
   </StrictMode>,
