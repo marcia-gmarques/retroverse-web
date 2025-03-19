@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         bovine: ['Bovine MVB', 'sans-serif'],
       },
+      textColor: {
+        lilas: ['#A89FCD']
+      },
     },
   },
   plugins: [],
