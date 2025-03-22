@@ -1,0 +1,14 @@
+.blinking-cursor {
+    display: inline-block;
+    width: 0px;
+    background-color: currentColor;  /* Make the color same as the text */
+    animation: blink 0.8s infinite step-end; /* This creates the blinking effect */
+    
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  

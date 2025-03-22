@@ -10,7 +10,8 @@ export default {
         bovine: ['Bovine MVB', 'sans-serif'],
       },
       textColor: {
-        lilas: ['#A89FCD']
+        lilas: ['#A89FCD'],
+        marinho: ['#bdebfb']
       },
     },
   },

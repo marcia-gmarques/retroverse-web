@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import '../styles/Video.css'
 
-const Playthrough = () => {
+const Playthrough = forwardRef((props, ref) => {
   return (
     <>
-      <div className='py-8 flex justify-center'>
+      <div ref={ref} className='py-8 flex justify-center'>
         <iframe width="560" height="315" className='videoframe shadow-[#856CAE]'
         src="https://www.youtube.com/embed/_U4jfCBA_lI?si=c-dCXvS_rVvb4YI1" 
         title="YouTube video player" frameborder="0" 
@@ -18,6 +18,6 @@ const Playthrough = () => {
       </div>
     </>
   )
-}
+});
 
 export default Playthrough;
