@@ -4,6 +4,7 @@ import SlidingText from './SlidingText';
 const Exhibitions = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
+      <h1 className='font-bovine text-lilas-0 my-12'>Exhibitions</h1>
       <div className='flex justify-center my-12'>
         <img src="src/assets/img/rendr-reaction-guy.jpeg" alt="man mesmerised playing virtual reality" className='max-w-md mb-4 imgframe' />
       </div>

@@ -42,8 +42,9 @@ const Team = forwardRef((props, ref) => {
     ];
 
     return (
-        <>
-            <div ref={ref}>
+        <div ref={ref}>
+            <h1 className='font-bovine text-lilas-0 my-12'>Our Team</h1>
+            <div>
                 <p className='py-4 lg:py-8 text-xl lg:px-8'>
                     Our team is made up of both developers and designers.  
                     <b> Márcia</b> is our team leader, project manager and one of the Unity developers specialized in VR. 
@@ -99,7 +100,7 @@ const Team = forwardRef((props, ref) => {
             <div className='flex justify-center my-12'>
                 <img src="src/assets/img/team.jpg" alt="team photo" className='max-w-md mb-4 imgframe'/>
             </div>
-        </>
+        </div>
     );
 });
 
