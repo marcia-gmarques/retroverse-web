@@ -5,8 +5,13 @@ const Exhibitions = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
       <h1 className='font-bovine text-lilas-0 my-12'>Exhibitions</h1>
-      <div className='flex justify-center my-12'>
-        <img src="src/assets/img/rendr-reaction-guy.jpeg" alt="man mesmerised playing virtual reality" className='max-w-md mb-4 imgframe' />
+      <div className='flex flex-row py-12'>
+        <img src="src/assets/img/rendr-reaction-guy.jpeg" 
+            alt="man mesmerised playing virtual reality" 
+            className='max-w-sm mb-4  mx-4 imgframe' />
+        {/* <img src="src/assets/img/SHOW CASE - Beta 2023 (9).jpeg" 
+            alt="man mesmerised playing virtual reality" 
+            className='mb-4 mx-4 min-w-full imgframe' />     */}
       </div>
       <SlidingText />
       <p>

@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import NavBar from "./components/NavBar.jsx";
+import Header from "./components/Header.jsx";
 import Content from "./components/Content.jsx";
 import Playthrough from "./components/Playthrough.jsx";
 import Team from "./components/Team.jsx";
@@ -28,7 +29,8 @@ const Main = () => {
             exhibitions: exhibitionsRef 
           }} 
         />
-      </header>  
+      </header> 
+      <Header />
       <Content ref={contentRef} />
       <Playthrough ref={playthroughRef} />
       <Team ref={teamRef} />
