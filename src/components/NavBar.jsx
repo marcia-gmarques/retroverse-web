@@ -19,6 +19,13 @@ const NavBar = ({ refs }) => {
     }
   };
 
+  // Hide current section and show next one
+  const handleSectionChange = (sectionRef) => {
+    if (sectionRef?.current) {
+      // sectionRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="flex justify-center w-full font-bovine bg-gradient-to-b from-[#120926] via-[#120926ee] to-transparent">
       <ul className="flex space-x-10 py-4">
@@ -35,7 +42,7 @@ const NavBar = ({ refs }) => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           style={styling}
-          onClick={() => handleScroll(refs.playthrough)}
+          onClick={() => handleSectionChange(refs.playthrough)}
           className="nav-item"
         >
           Play-through

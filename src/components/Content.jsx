@@ -6,7 +6,7 @@ const Content = forwardRef((props, ref) => {
   return (
     <>
     <div ref={ref}>
-    <h1 className='font-bovine text-lilas-0 my-12'>Project</h1>
+    <h1 className='font-bovine text-lilas-0 mb-12 mt-60'>Project</h1>
       <div className="flex flex-row items-center">
         <p className='py-4 text-xl px-4 text-left'>The Retroverse team worked on this project for three 
             months as part of their MSc in Interactive Digital Media. It all 
