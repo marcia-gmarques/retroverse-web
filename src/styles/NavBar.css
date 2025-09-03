@@ -3,14 +3,7 @@
     src: url('/fonts/fonnts.com-Bovine_MVB_Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-}
 
-.nav-item{
-    color:#bdebfb;
-}
-
-.nav-item:hover{
-    color:#856CAE;
 }
 
 /* prevents default blue link colour */

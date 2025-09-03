@@ -43,7 +43,7 @@ const Team = forwardRef((props, ref) => {
 
     return (
         <div ref={ref}>
-            <h1 className='font-bovine text-lilas-0 my-12'>Our Team</h1>
+            {/* <h1 className='font-bovine text-lilas-default my-12'>Our Team</h1> */}
                         
             <div className='flex flex-row flex-wrap justify-center my-8'>
                 {teamMembers.map((member, index) => (
@@ -64,7 +64,7 @@ const Team = forwardRef((props, ref) => {
                         </a>
                         <h1 className='text-3xl font-semibold'>{member.name}</h1>
                         {member.role.map((role, i) => (
-                            <p key={i} className='text-lilas-0'>{role}</p>
+                            <p key={i} className='text-lilas-default'>{role}</p>
                         ))}
                     </div>
                 ))}
@@ -84,7 +84,7 @@ const Team = forwardRef((props, ref) => {
             </div>
 
             <div>
-            <h2 className="text-4xl font-semibold py-8 px-32  leading-normal text-lilas-0">
+            <h2 className="text-4xl font-semibold py-8 px-32  leading-normal text-lilas-default">
                     Everything that you experience in the Retroverse is built from scratch; the 3D 
                     models, game narrative, and functionality that has been coded line by line.
                 </h2>

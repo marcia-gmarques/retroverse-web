@@ -10,8 +10,14 @@ export default {
         bovine: ['Bovine MVB', 'sans-serif'],
       },
       textColor: {
-        lilas: ['#A89FCD'],
-        marinho: ['#bdebfb']
+        lilas: {
+          default: '#A89FCD',
+          hover: '#8C7AB8'
+        },
+        marinho: '#bdebfb'
+      },
+      cursor: {
+        'home': 'url(/src/assets/png/question-box.png), auto',
       },
     },
   },

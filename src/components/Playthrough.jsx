@@ -5,7 +5,7 @@ const Playthrough = forwardRef((props, ref) => {
   return (
     <>
       <div ref={ref}>
-        <h1 className='font-bovine text-lilas-0 my-12'>Play-through</h1>
+        {/* <h1 className='font-bovine text-lilas-default my-12'>Play-through</h1> */}
         <div className='py-8 flex justify-center'>
           <iframe width="560" height="315" className='videoframe shadow-[#856CAE]'
           src="https://www.youtube.com/embed/_U4jfCBA_lI?si=c-dCXvS_rVvb4YI1" 
