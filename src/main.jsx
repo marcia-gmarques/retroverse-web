@@ -9,7 +9,7 @@ import Team from "./components/Team.jsx";
 import Exhibitions from "./components/Exhibitions.jsx";
 import Goodbye from "./components/Goodbye.jsx";
 
-const Main = () => {
+export const Main = () => {
   // State to track the active section
   const [activeSection, setActiveSection] = useState("project");
 

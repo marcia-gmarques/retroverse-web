@@ -1,12 +1,15 @@
 import React, { forwardRef } from "react";
 import Header from "./Header.jsx";
+import Loader from "./Loader.jsx";
 
 const Content = forwardRef((props, ref) => {
 
   return (
     <>
     <Header />
+    
     <div ref={ref} className="cursor-home">
+      <Loader />
     {/* <h1 className='font-bovine text-lilas-default mb-12 mt-60'>Project</h1> */}
       <div className="flex flex-row items-center">
         <p className='py-4 text-xl px-4 text-left'>The Retroverse team worked on this project for three 
