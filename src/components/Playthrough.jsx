@@ -1,9 +1,11 @@
 import React, { forwardRef } from 'react'
 import '../styles/Video.css'
+import SplineGhost from './SplineGhost';
 
 const Playthrough = forwardRef((props, ref) => {
   return (
     <>
+    <SplineGhost />
       <div ref={ref}>
         {/* <h1 className='font-bovine text-lilas-default my-12'>Play-through</h1> */}
         <div className='py-8 flex justify-center'>
