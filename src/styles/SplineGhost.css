@@ -1,0 +1,8 @@
+.spline-ghost {
+  position: absolute;
+  top: 30;
+  right: 0;
+  width: 40%;
+  height: 40%;
+  z-index: 0;
+}
