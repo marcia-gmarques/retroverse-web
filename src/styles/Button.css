@@ -1,0 +1,22 @@
+.start-button{
+    background-color: #8C7AB8; /* Lilas */
+    border: 0.17em solid transparent; /* adding invisible border to prevent shifting other divs */
+    box-sizing: border-box;
+    color: white;
+    padding: 1em 1.8em;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 1em;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+.start-button:hover {
+    background-color: #120926; /* backgroudn color */
+    box-sizing: border-box;
+    color: #fff; /* Lilas */
+    border: 0.17em solid #8C7AB8; /* Lilas */
+    transition: 0.3s all ease;
+}
