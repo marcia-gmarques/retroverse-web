@@ -7,18 +7,28 @@ import Content from "./components/Content.jsx";
 import Playthrough from "./components/Playthrough.jsx";
 import Team from "./components/Team.jsx";
 import Exhibitions from "./components/Exhibitions.jsx";
-import Goodbye from "./components/Goodbye.jsx";
+import Loader from "./components/Loader.jsx";
 
 export const Main = () => {
   // State to track the active section
   const [activeSection, setActiveSection] = useState("project");
+  const [startExperience, setStartExperience] = useState(false);
 
+  //Function to handle start screen and show main content
+  const handleStartExperience = () => {
+    setStartExperience(true);
+  }
+
+  // Function to handle section change
   const handleSectionChange = (section) => {
     setActiveSection(section);
     console.log("Active section changed to:", section);
   }
 
-  return (
+  //if startExperience is false, show Loader component (so people have not initiated the experience), else show main content
+  return !startExperience ? (
+    <Loader onStart={handleStartExperience}/>
+  ) : (
     <StrictMode>
       <header className="sticky top-0 flex justify-center items-center">
         <NavBar onSectionChange={handleSectionChange} activeSection={activeSection}  />
@@ -28,7 +38,6 @@ export const Main = () => {
       {activeSection === "team" && <Team />}
       {activeSection === "exhibitions" && <Exhibitions />}
       <App />
-      <Goodbye />
     </StrictMode>
   );
 };
