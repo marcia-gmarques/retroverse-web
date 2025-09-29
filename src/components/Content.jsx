@@ -1,5 +1,6 @@
 import React, { forwardRef } from "react";
 import Header from "./Header.jsx";
+import "../styles/Cursor.css";
 
 const Content = forwardRef((props, ref) => {
 

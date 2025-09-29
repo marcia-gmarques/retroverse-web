@@ -11,4 +11,8 @@
       opacity: 0;
     }
   }
+
+  .cursor-home{
+    cursor: url('../assets/cursors/cursor-tetris.png') 25 25, auto;
+  }
   

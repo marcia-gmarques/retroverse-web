@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import '../styles/BlinkingCursor.css';
+import '../styles/Cursor.css';
 
 const Header = () => {
   const videoGames = ["Tetris.", "PacMan.", "Super Mario."];
