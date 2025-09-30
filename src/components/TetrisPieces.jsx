@@ -1,7 +1,43 @@
-//import gsap from "gsap";
+import gsap from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import React from "react";
 
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+
 const TetrisPieces = () => {
+
+    useGSAP(() => {
+        const container = document.querySelector('.tetris-pieces');
+        const pieces = gsap.utils.toArray('.tetris-piece');
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                start: 'top center',
+                end: 'bottom top +=200',
+                scrub: 0.7,
+                pin: true,
+                pinSpacing: true,
+                markers: true,
+                anticipatePin: 1,
+            }
+        });
+
+        //start with pieces above the container
+        const fallDistance = Math.max(300, container.clientHeight * 6);
+
+        //responsive fall distance
+        tl.fromTo(pieces,
+            { y: -fallDistance, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.12, ease: 'power3.out', duration: 1 }
+        );
+        
+    });
+
+
     return (
         <div className="tetris-pieces relative w-full max-w-[800px] aspect-[2/1] my-12 mx-auto  origin-center">
             {/* Blue piece at bottom left */}
