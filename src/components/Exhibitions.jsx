@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 // import SlidingText from './SlidingText';
-import TetrisPieces from '../styles/TetrisPieces';
+import TetrisPieces from './TetrisPieces';
 
 const Exhibitions = forwardRef((props, ref) => {
   return (
