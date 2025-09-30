@@ -12,7 +12,7 @@
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
     "@splinetool/runtime": "^1.10.55",
-    "gsap": "^3.12.7",
+    "gsap": "^3.13.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-typed": "^2.0.12"

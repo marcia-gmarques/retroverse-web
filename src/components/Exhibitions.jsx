@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react';
 // import SlidingText from './SlidingText';
+import TetrisPieces from '../styles/TetrisPieces';
 
 const Exhibitions = forwardRef((props, ref) => {
   return (
@@ -24,6 +25,7 @@ const Exhibitions = forwardRef((props, ref) => {
         <img src="src/assets/img/science_gallery.jpg" alt="man playing virtual reality" className='max-w-xl mb-4 imgframe' />
       </div>
       {/* <SlidingText /> */}
+      <TetrisPieces />
     </div>
   );
 });
