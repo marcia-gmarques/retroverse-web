@@ -9,37 +9,37 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const TetrisPieces = () => {
 
-    // useGSAP(() => {
-    //     const container = document.querySelector('.tetris-pieces');
-    //     const pieces = gsap.utils.toArray('.tetris-piece');
+    useGSAP(() => {
+        const container = document.querySelector('.tetris-pieces');
+        const pieces = gsap.utils.toArray('.tetris-piece');
 
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: container,
-    //             start: 'top center',
-    //             end: 'bottom top +=200',
-    //             scrub: 0.7,
-    //             pin: true,
-    //             pinSpacing: true,
-    //             markers: true,
-    //             anticipatePin: 1,
-    //         }
-    //     });
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                start: 'top center',
+                end: 'bottom top +=100',
+                scrub: 0.7,
+                pin: true,
+                pinSpacing: true,
+                markers: true,
+                anticipatePin: 1,
+            }
+        });
 
-    //     //start with pieces above the container
-    //     const fallDistance = Math.max(300, container.clientHeight * 1);
+        //start with pieces above the container
+        const fallDistance = Math.max(500, container.clientHeight * 1);
 
-    //     //responsive fall distance
-    //     tl.fromTo(pieces,
-    //         { y: -fallDistance, opacity: 0 },
-    //         { y: 0, opacity: 1, stagger: 0.12, ease: 'power3.out', duration: 1 }
-    //     );
+        //responsive fall distance
+        tl.fromTo(pieces,
+            { y: -fallDistance, opacity: 0 },
+            { y: 0, opacity: 1, stagger: 0.12, ease: 'power3.out', duration: 1 }
+        );
         
-    // });
+    });
 
 
     return (
-        <div className="tetris-pieces grid grid-cols-12 grid-rows-5 gap-0 w-full max-w-[1200px] mx-auto my-12">
+        <div className="tetris-pieces grid grid-cols-12 grid-rows-5 gap-0 w-full max-w-[1200px] max-h-[500px] mx-auto my-12 z-0">
             {/* Bottom row: row-start-2 */}
             {/* Blue piece occupies cols 1-4 */}
             <div className="tetris-piece col-start-1 col-span-4 row-start-5 row-span-1 flex justify-center items-end">
