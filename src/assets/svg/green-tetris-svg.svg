@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 300">
   <defs>
     <style>
       .cls-1 {
@@ -7,27 +7,27 @@
       }
 
       .cls-2 {
-        fill: #1fec71;
+        fill: #1feb71;
       }
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
     <g>
       <g>
-        <rect class="cls-2" x=".37" y=".37" width="99.25" height="99.25"/>
-        <path class="cls-1" d="M99.25.75v98.5H.75V.75h98.5M100,0H0v100h100V0h0Z"/>
+        <rect class="cls-2" x="100.37" y="200.37" width="99.25" height="99.25"/>
+        <path class="cls-1" d="M100.75,200.75h98.5s0,98.5,0,98.5h-98.5s0-98.5,0-98.5M100,200v100s100,0,100,0v-100s-100,0-100,0h0Z"/>
       </g>
       <g>
-        <rect class="cls-2" x="200.37" y="100.37" width="99.25" height="99.25"/>
-        <path class="cls-1" d="M299.25,100.75v98.5h-98.5v-98.5h98.5M300,100h-100v100h100v-100h0Z"/>
+        <rect class="cls-2" x=".38" y=".38" width="99.25" height="99.25"/>
+        <path class="cls-1" d="M.75.75h98.5v98.5H.75V.75M0,0v100h100S100,0,100,0H0Z"/>
       </g>
       <g>
-        <rect class="cls-2" x="200.37" y=".37" width="99.25" height="99.25"/>
-        <path class="cls-1" d="M299.25.75v98.5h-98.5V.75h98.5M300,0h-100v100h100V0h0Z"/>
+        <rect class="cls-2" x="100.38" y=".38" width="99.25" height="99.25"/>
+        <path class="cls-1" d="M100.75.75h98.5v98.5h-98.5V.75M100,0v100h100S200,0,200,0h-100Z"/>
       </g>
       <g>
-        <rect class="cls-2" x="100.37" y=".37" width="99.25" height="99.25"/>
-        <path class="cls-1" d="M199.25.75v98.5h-98.5V.75h98.5M200,0h-100v100h100V0h0Z"/>
+        <rect class="cls-2" x="100.37" y="100.38" width="99.25" height="99.25"/>
+        <path class="cls-1" d="M100.75,100.75h98.5v98.5h-98.5v-98.5M100,100v100h100s0-100,0-100h-100Z"/>
       </g>
     </g>
   </g>
