@@ -1,12 +1,33 @@
-import React, { useState, forwardRef } from 'react';
+import React, { forwardRef, useRef, useEffect } from 'react';
 import '../styles/ImgShadow.css';
+import gsap from 'gsap';
 
 const Team = forwardRef((props, ref) => {
-    // Track which image is being hovered
-    const [hoveredIndex, setHoveredIndex] = useState(null);
+    // Refs for each card
+    const cardRefs = useRef([]);
 
-    const handleMouseEnter = (index) => setHoveredIndex(index);
-    const handleMouseLeave = () => setHoveredIndex(null);
+    const handleMouseEnter = (index) => {
+        const card = cardRefs.current[index];
+        if (card) {
+            gsap.to(card, { rotateY: 180, duration: 0.5, ease: 'power2.inOut' });
+        }
+    };
+    const handleMouseLeave = (index) => {
+        const card = cardRefs.current[index];
+        if (card) {
+            gsap.to(card, { rotateY: 0, duration: 0.5, ease: 'power2.inOut' });
+        }
+    };
+
+    // Ensure all cards are reset on unmount
+    useEffect(() => {
+        const cards = cardRefs.current;
+        return () => {
+            cards.forEach(card => {
+                if (card) gsap.set(card, { rotateY: 0 });
+            });
+        };
+    }, []);
 
     const teamMembers = [
         { 
@@ -43,26 +64,42 @@ const Team = forwardRef((props, ref) => {
 
     return (
         <div ref={ref}>
-            {/* <h1 className='font-bovine text-lilas-default my-12'>Our Team</h1> */}
-                        
+            <div>
+                <p className='py-4 lg:py-8 text-xl lg:px-8'>
+                    Our team is a mix of developers and designers who came together to bring Retroverse 
+                    to life. Each member brought unique skills, from programming and 3D design to audio, 
+                    graphics, and project management.
+                </p>
+            </div>
+
             <div className='flex flex-row flex-wrap justify-center my-8'>
                 {teamMembers.map((member, index) => (
-                    <div key={index} className='mx-12 flex flex-col items-center mb-8'>
+                    <div key={index} className='mx-12 flex flex-col items-center mb-8' style={{ perspective: 1000 }}>
                         <a href={member.link} target="_blank" rel="noopener noreferrer">
-                            <img
-                                src={member.img}
-                                alt={`${member.name} headshot`}
-                                className='max-h-64 mb-4'
+                            <div
+                                className="relative w-48 h-64"
+                                ref={el => (cardRefs.current[index] = el)}
                                 onMouseEnter={() => handleMouseEnter(index)}
-                                onMouseLeave={handleMouseLeave}
-                                style={{
-                                    cursor: "pointer",
-                                    opacity: hoveredIndex === index ? "0.5" : "1",
-                                    transition: "0.3s",
-                                }}
-                            />
+                                onMouseLeave={() => handleMouseLeave(index)}
+                                style={{ transformStyle: 'preserve-3d', transition: 'transform 0.5s' }}
+                            >
+                                {/* Front Side */}
+                                <img
+                                    src={member.img}
+                                    alt={`${member.name} headshot`}
+                                    className="absolute w-full h-full object-cover rounded-lg shadow-lg"
+                                    style={{ backfaceVisibility: 'hidden' }}
+                                />
+                                {/* Back Side */}
+                                <img
+                                    src="src/assets/png/backCardLinkedin.png"
+                                    alt="LinkedIn logo"
+                                    className="absolute w-full h-full object-cover rounded-lg shadow-lg"
+                                    style={{ transform: 'rotateY(180deg)', backfaceVisibility: 'hidden' }}
+                                />
+                            </div>
                         </a>
-                        <h1 className='text-3xl font-semibold'>{member.name}</h1>
+                        <h1 className='text-3xl font-semibold mt-4'>{member.name}</h1>
                         {member.role.map((role, i) => (
                             <p key={i} className='text-lilas-default'>{role}</p>
                         ))}
@@ -71,36 +108,17 @@ const Team = forwardRef((props, ref) => {
             </div>
 
             <div>
-                <p className='py-4 lg:py-8 text-xl lg:px-8'>
-                    Our team is made up of both developers and designers.  
-                    <b> Márcia</b> is our team leader, project manager and one of the Unity developers specialized in VR. 
-                    <b> Rosie</b> leads the development team, having mastered C#. <b>Vasiliki</b> is also one of the developers 
-                    as well as a 3D and Audio designer. She designed the Super Mario environment. <b>Audrey</b> is a 3D 
-                    and graphic designer, having designed the PacMan room and all branding, as well as being our social 
-                    media manager, which allowed us to document our progress throughout this project on Instagram 
-                    and YouTube. And, last but not least, <b>Brad</b> is our lead 3D designer and scriptwriter, being 
-                    responsible for the Tetris room as well as the main bedroom.
-                </p>
-            </div>
-
-            <div>
             <h2 className="text-4xl font-semibold py-8 px-32  leading-normal text-lilas-default">
-                    Everything that you experience in the Retroverse is built from scratch; the 3D 
-                    models, game narrative, and functionality that has been coded line by line.
+                    "Everything that you experience in the Retroverse is built from scratch: the 3D 
+                    models, game narrative, and functionality that has been coded line by line."
                 </h2>
                 <p className='py-4 lg:py-8 text-xl lg:px-8'>
-                    Doing a virtual reality project challenged us creatively and academically; 
-                    from generating ideas, 3D designing the rooms, to programming the game mechanics.
-                    Before completing this project, none of the Retroverse team members were familiar 
-                    with Unity or C#, which are the software and coding language used. Having started 
-                    out as complete virtual reality beginners, we are exceptionally proud to present to 
-                    you our final project.
+                    Doing a virtual reality project challenged us creatively and academically. 
+                    From brainstorming ideas to designing 3D rooms and programming mechanics, 
+                    we learned everything as beginners in Unity and C# and we’re proud of what we achieved! 
+                    Retroverse is a testament to teamwork, creativity, and persistence.
                 </p>
             </div>
-
-            {/* <div className='flex justify-center my-12'>
-                <img src="src/assets/img/team.jpg" alt="team photo" className='max-w-md mb-4 imgframe'/>
-            </div> */}
         </div>
     );
 });
