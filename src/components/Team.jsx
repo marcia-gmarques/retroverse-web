@@ -1,6 +1,7 @@
 import React, { forwardRef, useRef, useEffect } from 'react';
 import '../styles/ImgShadow.css';
 import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Team = forwardRef((props, ref) => {
     // Refs for each card
@@ -27,6 +28,29 @@ const Team = forwardRef((props, ref) => {
                 if (card) gsap.set(card, { rotateY: 0 });
             });
         };
+    }, []);
+
+    //text animation
+    useGSAP(() => {
+        gsap.fromTo('#first-text', {
+            ease: 'power1.inOut',
+            opacity: 0,
+            y: 20
+        }, {
+            opacity: 1,
+            y: 0, 
+            delay: 0.1,
+        });
+
+        gsap.fromTo(['.card-section', '.paragraphs'], {
+            opacity: 0,
+            y: 20
+        }, {
+            opacity: 1,
+            y: 0, 
+            delay: 0.6,
+            stagger: 0.8,
+        })
     }, []);
 
     const teamMembers = [
@@ -65,14 +89,14 @@ const Team = forwardRef((props, ref) => {
     return (
         <div ref={ref}>
             <div>
-                <p className='py-4 lg:py-8 text-xl lg:px-8'>
+                <p id="first-text" className='py-4 lg:py-8 text-xl lg:px-8'>
                     Our team is a mix of developers and designers who came together to bring Retroverse 
                     to life. Each member brought unique skills, from programming and 3D design to audio, 
                     graphics, and project management.
                 </p>
             </div>
 
-            <div className='flex flex-row flex-wrap justify-center my-8'>
+            <div className='flex flex-row flex-wrap justify-center my-8 card-section'>
                 {teamMembers.map((member, index) => (
                     <div key={index} className='mx-12 flex flex-col items-center mb-8' style={{ perspective: 1000 }}>
                         <a href={member.link} target="_blank" rel="noopener noreferrer">
@@ -108,11 +132,11 @@ const Team = forwardRef((props, ref) => {
             </div>
 
             <div>
-            <h2 className="text-4xl font-semibold py-8 px-32  leading-normal text-lilas-default">
+            <h2 className="paragraphs text-4xl font-semibold py-8 px-32  leading-normal text-lilas-default">
                     "Everything that you experience in the Retroverse is built from scratch: the 3D 
                     models, game narrative, and functionality that has been coded line by line."
                 </h2>
-                <p className='py-4 lg:py-8 text-xl lg:px-8'>
+                <p className='paragraphs py-4 lg:py-8 text-xl lg:px-8'>
                     Doing a virtual reality project challenged us creatively and academically. 
                     From brainstorming ideas to designing 3D rooms and programming mechanics, 
                     we learned everything as beginners in Unity and C# and we’re proud of what we achieved! 
