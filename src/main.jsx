@@ -30,7 +30,7 @@ export const Main = () => {
     <Loader onStart={handleStartExperience}/>
   ) : (
     <StrictMode>
-      <header className="sticky top-0 flex justify-center items-center">
+      <header className="sticky top-0 flex justify-center items-center z-50 w-full">
         <NavBar onSectionChange={handleSectionChange} activeSection={activeSection}  />
       </header> 
       {activeSection === "project" && <Content />}

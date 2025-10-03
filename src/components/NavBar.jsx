@@ -2,48 +2,30 @@
 import "../styles/NavBar.css";
 
 const NavBar = ( props ) => {
-  // const [isHover, setIsHover] = useState(false);
-
-  // const handleMouseEnter = () => setIsHover(true);
-  // const handleMouseLeave = () => setIsHover(false);
-
-  // const styling = {
-  //   padding: "2.5rem",
-  //   cursor: isHover ? "pointer" : "default",
-  // };
-
   
 
   return (
     <div className="flex justify-center w-full font-bovine bg-gradient-to-b from-[#120926] via-[#120926ee] to-transparent">
       <ul className="flex space-x-10 py-4">
         <li
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
           onClick={() => props.onSectionChange("project")}
           className={`nav-item cursor-pointer p-9 ${props.activeSection === "project" ? "text-lilas-default" : "text-marinho-0 hover:text-lilas-hover"}`}
         >
           Project
         </li>
         <li
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
           onClick={() => props.onSectionChange("playthrough")}
           className={`nav-item cursor-pointer p-9 ${props.activeSection === "playthrough" ? "text-lilas-default" : "text-marinho-0 hover:text-lilas-hover"}`}
         >
           Play-through
         </li>
         <li
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
           onClick={() => props.onSectionChange("team")}
           className={`nav-item cursor-pointer p-9 ${props.activeSection === "team" ? "text-lilas-default" : "text-marinho-0 hover:text-lilas-hover"}`}
         >
           Our Team
         </li>
         <li
-          // onMouseEnter={handleMouseEnter}
-          // onMouseLeave={handleMouseLeave}
           onClick={() => props.onSectionChange("exhibitions")}
           className={`nav-item cursor-pointer p-9 ${props.activeSection === "exhibitions" ? "text-lilas-default" : "text-marinho-0 hover:text-lilas-hover"}`}
         >
