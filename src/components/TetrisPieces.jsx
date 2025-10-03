@@ -3,46 +3,56 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import React from "react";
 
-
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
 
 const TetrisPieces = () => {
 
+
     useGSAP(() => {
+        const firstPieces = gsap.utils.toArray('.tetris-auto');
+        const textPieces = gsap.utils.toArray('.tetris-plus');
         const container = document.querySelector('.tetris-pieces');
-        const pieces = gsap.utils.toArray('.tetris-piece');
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: 'top center',
-                end: 'bottom top +=100',
-                scrub: 0.7,
-                pin: true,
-                pinSpacing: true,
-                markers: true,
-                anticipatePin: 1,
+        firstPieces.forEach((piece, i) => {
+            gsap.fromTo(piece, { 
+                y: -500,
+                opacity: 0 
+            },
+            { 
+                y: 0, 
+                opacity: 1, 
+                delay: i * 0.8, 
+                ease: 'power3.out', 
+                duration: 1 }
+            )
+        })
+
+        //add a timeline for these blocks to come in after the first pieces and with text sliding in
+        textPieces.forEach((block, i) => {
+            gsap.fromTo(block, { 
+                y: -500,
+                opacity: 0,  
+            },
+            {
+                y: 0,
+                delay: firstPieces.length * 0.8 + i * 0.8,
+                opacity: 1,
+                scrollTrigger: {
+                    trigger: container,
+                    /* markers: true,
+                    start: 'top top',
+                    end: 'bottom +=100', */
+                }        
             }
-        });
-
-        //start with pieces above the container
-        const fallDistance = Math.max(500, container.clientHeight * 1);
-
-        //responsive fall distance
-        tl.fromTo(pieces,
-            { y: -fallDistance, opacity: 0 },
-            { y: 0, opacity: 1, stagger: 0.12, ease: 'power3.out', duration: 1 }
-        );
-        
-    });
+        )})
+    }, []);
 
 
     return (
         <div className="tetris-pieces grid grid-cols-12 grid-rows-5 gap-0 w-full max-w-[1200px] max-h-[500px] mx-auto my-12 z-0">
             {/* Bottom row: row-start-2 */}
             {/* Blue piece occupies cols 1-4 */}
-            <div className="tetris-piece col-start-1 col-span-4 row-start-5 row-span-1 flex justify-center items-end">
+            <div className="tetris-piece tetris-auto blue1 col-start-1 col-span-4 row-start-5 row-span-1 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/blue-tetris-svg.svg" 
                     alt="tetris blue piece" 
@@ -50,7 +60,7 @@ const TetrisPieces = () => {
             </div>
 
             {/* Pink piece occupies cols 5-7 */}
-            <div className="tetris-piece col-start-5 col-span-3 row-start-5 row-span-2 flex justify-center items-end">
+            <div className="tetris-piece tetris-auto pink1 col-start-5 col-span-3 row-start-5 row-span-2 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/pink-tetris-svg.svg" 
                     alt="tetris pink piece" 
@@ -58,7 +68,7 @@ const TetrisPieces = () => {
             </div>
 
             {/* Orange piece occupies cols 7-8 */}
-            <div className="tetris-piece col-start-7 col-span-2 row-start-5 row-span-3 flex justify-center items-end">
+            <div className="tetris-piece tetris-auto orange1 col-start-7 col-span-2 row-start-5 row-span-3 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/orange-tetris-svg.svg" 
                     alt="tetris orange piece" 
@@ -66,7 +76,7 @@ const TetrisPieces = () => {
             </div>
 
             {/* Yellow piece occupies cols 9-10 */}
-            <div className="tetris-piece piece-yellow col-start-9 col-span-2 row-start-5 row-span-2 flex justify-center items-end">
+            <div className="tetris-piece tetris-plus col-start-9 col-span-2 row-start-5 row-span-2 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/yellow-tetris-svg.svg" 
                     alt="tetris yellow piece" 
@@ -74,7 +84,7 @@ const TetrisPieces = () => {
             </div>
 
             {/* Green piece occupies col 12 */}
-            <div className="tetris-piece col-start-11 col-span-2 row-start-5 row-span-3 flex justify-center items-end">
+            <div className="tetris-piece tetris-auto green1 col-start-11 col-span-2 row-start-5 row-span-3 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/green-tetris.svg" 
                     alt="tetris green piece" 
@@ -82,21 +92,21 @@ const TetrisPieces = () => {
             </div>
 
             {/* Top row pieces (row-start-1) - placed above left side */}
-            <div className="tetris-piece col-start-1 col-span-2 row-start-3 row-span-2 flex justify-center items-end">
+            <div className="tetris-piece tetris-auto yellow2 col-start-1 col-span-2 row-start-3 row-span-2 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/yellow-tetris-svg.svg" 
                     alt="tetris yellow piece" 
                     className="w-full object-contain" />
             </div>
 
-            <div className="tetris-piece piece-green col-start-2 col-span-2 row-start-3 row-span-2 flex justify-center items-end">
+            <div className="tetris-piece tetris-plus col-start-2 col-span-2 row-start-3 row-span-2 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/green-tetris-svg.svg" 
                     alt="tetris green piece" 
                     className="w-full object-contain" />
             </div>
 
-            <div className="tetris-piece piece-blue col-start-11 col-span-1 row-start-1 row-span-4 flex justify-center items-end">
+            <div className="tetris-piece tetris-plus col-start-11 col-span-1 row-start-1 row-span-4 flex justify-center items-end">
                 <img 
                     src="src/assets/svg/blue-tetris-rotate.svg" 
                     alt="tetris blue piece" 
