@@ -9,6 +9,8 @@ const TetrisPieces = () => {
 
         useGSAP(() => {
             const container = document.querySelector('.tetris-section');
+            // const grid = document.querySelector('.tetris-pieces');
+            // const containerHeight = container ? container.offsetHeight : 0;
             const firstPieces = gsap.utils.toArray('.tetris-auto');
             const textPieces = gsap.utils.toArray('.tetris-plus');
             // const totalPieces = firstPieces + textPieces;
@@ -17,7 +19,7 @@ const TetrisPieces = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                 trigger: container,
-                start: "top top",
+                start: () => "top center-=200" ,
                 end: () => "+=" + tl.duration() * 400, // dynamic end based on number of pieces
                 scrub: true,
                 pin: true,
@@ -37,7 +39,7 @@ const TetrisPieces = () => {
             // Animate text pieces with scroll spacing
             textPieces.forEach((block) => {
                 tl.fromTo(block,
-                { y: -500, opacity: 0.5 },
+                { y: -500, opacity: 0 },
                 { y: 0, opacity: 1, ease: "power3.out" },
                 ">+2"
                 );
@@ -75,7 +77,12 @@ const TetrisPieces = () => {
             </div>
 
             {/* Yellow piece occupies cols 9-10 */}
-            <div className="tetris-piece tetris-plus col-start-9 col-span-2 row-start-5 row-span-2 flex justify-center items-end">
+            <div className="tetris-piece tetris-plus col-start-9 col-span-2 row-start-5 row-span-2 flex justify-center items-end relative">
+                <div className="piece-note note-yellow flex items-center justify-end pr-2 absolute left-[-300px] top -translate-x-1/2 z-10">
+                <span className="text-sm leading-tight">The Retroverse team spent three months developing this project 
+                    as part of their MSc in Interactive Digital Media. Our goal was to create something truly 
+                    unique — an experience that combined emotion, memory, and the nostalgia of iconic video games.</span>
+            </div>
                 <img 
                     src="src/assets/svg/yellow-tetris-svg.svg" 
                     alt="tetris yellow piece" 
