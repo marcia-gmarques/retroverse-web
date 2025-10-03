@@ -7,48 +7,47 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const TetrisPieces = () => {
 
+        useGSAP(() => {
+            const container = document.querySelector('.tetris-section');
+            const firstPieces = gsap.utils.toArray('.tetris-auto');
+            const textPieces = gsap.utils.toArray('.tetris-plus');
+            // const totalPieces = firstPieces + textPieces;
+            // const totalPieces = [...firstPieces, ...textPieces];
 
-    useGSAP(() => {
-        const firstPieces = gsap.utils.toArray('.tetris-auto');
-        const textPieces = gsap.utils.toArray('.tetris-plus');
-        const container = document.querySelector('.tetris-pieces');
-
-        firstPieces.forEach((piece, i) => {
-            gsap.fromTo(piece, { 
-                y: -500,
-                opacity: 0 
-            },
-            { 
-                y: 0, 
-                opacity: 1, 
-                delay: i * 0.8, 
-                ease: 'power3.out', 
-                duration: 1 }
-            )
-        })
-
-        //add a timeline for these blocks to come in after the first pieces and with text sliding in
-        textPieces.forEach((block, i) => {
-            gsap.fromTo(block, { 
-                y: -500,
-                opacity: 0,  
-            },
-            {
-                y: 0,
-                delay: firstPieces.length * 0.8 + i * 0.8,
-                opacity: 1,
+            const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: container,
-                    /* markers: true,
-                    start: 'top top',
-                    end: 'bottom +=100', */
-                }        
-            }
-        )})
-    }, []);
+                trigger: container,
+                start: "top top",
+                end: () => "+=" + tl.duration() * 400, // dynamic end based on number of pieces
+                scrub: true,
+                pin: true,
+                markers: true
+                }
+            });
+
+            // Animate first pieces at the start of the timeline
+            firstPieces.forEach((piece, i) => {
+                tl.fromTo(piece,
+                { y: -300, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, ease: "power3.out"},
+                i * 0.3 // small stagger for first pieces
+                );
+            });
+
+            // Animate text pieces with scroll spacing
+            textPieces.forEach((block) => {
+                tl.fromTo(block,
+                { y: -500, opacity: 0.5 },
+                { y: 0, opacity: 1, ease: "power3.out" },
+                ">+2"
+                );
+            });
+            });
+
 
 
     return (
+        <section className="tetris-section">
         <div className="tetris-pieces grid grid-cols-12 grid-rows-5 gap-0 w-full max-w-[1200px] max-h-[500px] mx-auto my-12 z-0">
             {/* Bottom row: row-start-2 */}
             {/* Blue piece occupies cols 1-4 */}
@@ -120,6 +119,7 @@ const TetrisPieces = () => {
                     unique — an experience that combined emotion, memory, and the nostalgia of iconic video games.</span>
             </div> */}
         </div>
+        </section>
     );
 };
 
