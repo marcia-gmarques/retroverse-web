@@ -1,7 +1,43 @@
 import React, { forwardRef } from 'react';
 // import SlidingText from './SlidingText';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 
 const Exhibitions = forwardRef((props, ref) => {
+
+  //text animation
+    useGSAP(() => {
+        gsap.fromTo('#first-text', {
+            ease: 'power1.inOut',
+            opacity: 0,
+            y: 20
+        }, {
+            opacity: 1,
+            y: 0, 
+            delay: 0.1,
+        });
+
+        const exhibitions = document.querySelectorAll('.exhibition-section');
+        exhibitions.forEach(section => {
+          gsap.fromTo(section, {
+              opacity: 0,
+              y: 30
+          }, {
+              opacity: 1,
+              y: 0, 
+              delay: 0.6,
+              scrollTrigger: {
+                trigger: section,
+                start: 'top 60%',
+                end: 'bottom 10%',
+                toggleActions: 'play none none reverse',
+              }
+          })
+        });
+
+    }, []);
+
+
   return (
     <div ref={ref}>
       {/* <h1 className='font-bovine text-lilas-default my-12'>Exhibitions</h1> */}
