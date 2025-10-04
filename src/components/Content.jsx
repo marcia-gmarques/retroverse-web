@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import Header from "./Header.jsx";
 import "../styles/Cursor.css";
+import TetrisPieces from "./TetrisPieces.jsx";
 
 const Content = forwardRef((props, ref) => {
 
@@ -38,6 +39,7 @@ const Content = forwardRef((props, ref) => {
         </p>        
     </div>
     </div>
+    <TetrisPieces />
     </>
   );
 });
