@@ -30,7 +30,7 @@ const Playthrough = forwardRef((props, ref) => {
 
   return (
     <>
-    <SplineGhost />
+    {/* <SplineGhost /> */}
       <div ref={ref}>
         <div className='pb-3 text-l' id="first-text">
           <p className='pb-4'>Step inside Retroverse through our narrated play-through.
