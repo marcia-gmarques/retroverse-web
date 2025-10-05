@@ -53,7 +53,7 @@ const Exhibitions = forwardRef((props, ref) => {
 
       <div className='flex flex-row text-left my-20 exhibition-section'>
         <div className='flex flex-col mb-8'>
-          <h1>Interactive Digital Media Showcase</h1>
+          <h1 className='font-bovine text-marinho'>Interactive Digital Media Showcase</h1>
           <h2 className='mt-2'>Trinity College Dublin (2023)</h2>
           <p className='mt-8'>Our first public showing took place at the Interactive Digital Media Showcase in Trinity 
             College Dublin. Students, professors, and visitors queued up to try Retroverse through a 
@@ -71,7 +71,7 @@ const Exhibitions = forwardRef((props, ref) => {
           <img src="src/assets/img/researchers-night.jpg" alt="people playing virtual reality" className='max-w-xl mb-4 imgframe' />
         </div>
         <div className='flex flex-col mb-8 ml-12'>
-          <h1>European Researchers’ Night</h1>
+          <h1 className='font-bovine text-marinho'>European Researchers’ Night</h1>
           <h2 className='mt-2'>Trinity College Dublin (2023)</h2>
           <p className='mt-8'>Following the success of our debut, we were invited to present Retroverse 
             at European Researchers’ Night, an event that celebrates innovation and creativity. It was 
@@ -83,7 +83,7 @@ const Exhibitions = forwardRef((props, ref) => {
 
       <div className='flex flex-row text-left my-20 exhibition-section'>
         <div className='flex flex-col mb-8'>
-          <h1>Beta Festival</h1>
+          <h1 className='font-bovine text-marinho'>Beta Festival</h1>
           <h2 className='mt-2'>Dublin, Ireland (2023)</h2>
           <p className='mt-8'>Encouraged by our supervisor, we submitted Retroverse to Beta Festival, 
             a brand-new celebration of technology and digital art. We showcased our work alongside 
@@ -101,7 +101,7 @@ const Exhibitions = forwardRef((props, ref) => {
           <img src="src/assets/img/rendr-reaction-guy.jpeg" alt="guy amazed whilst playing virtual reality" className='max-w-xl mb-4 imgframe' />
         </div>
         <div className='flex flex-col mb-8 ml-12'>
-          <h1>RENDR Festival</h1>
+          <h1 className='font-bovine text-marinho'>RENDR Festival</h1>
           <h2 className='mt-2'>Belfast, UK (2024)</h2>
           <p className='mt-8'>Our biggest stage yet — RENDR Festival, a major tech conference that 
             attracts creators and industry professionals from across the UK and Ireland. Many 
@@ -113,7 +113,7 @@ const Exhibitions = forwardRef((props, ref) => {
 
       <div className='flex flex-row text-left my-20 exhibition-section'>
         <div className='flex flex-col mb-8'>
-          <h1>Trinity College Open Day</h1>
+          <h1 className='font-bovine text-marinho'>Trinity College Open Day</h1>
           <h2 className='mt-2'>Trinity College Dublin (2024)</h2>
           <p className='mt-8'>We were also invited to showcase Retroverse at Trinity College’s Open 
             Day, where prospective students explored what current students and graduates have 

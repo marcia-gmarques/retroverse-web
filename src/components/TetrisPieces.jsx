@@ -23,7 +23,7 @@ const TetrisPieces = () => {
                 end: () => "+=" + tl.duration() * 400, // dynamic end based on number of pieces
                 scrub: true,
                 pin: true,
-                markers: true
+                //markers: true
                 }
             });
 

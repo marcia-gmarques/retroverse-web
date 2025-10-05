@@ -10,34 +10,59 @@ const Content = forwardRef((props, ref) => {
     <Header />
     
     <div ref={ref} className="cursor-home">
+
     {/* <h1 className='font-bovine text-lilas-default mb-12 mt-60'>Project</h1> */}
+
       <div className="flex flex-row items-center">
-        <p className='py-4 text-xl px-4 text-left'>The Retroverse team worked on this project for three 
+        <div className="flex flex-col">
+          <h1 className='font-bovine text-marinho text-left my-4'>The Idea</h1>
+          <p className='my-4 text-l text-left'>The Retroverse team worked on this project for three 
             months as part of their MSc in Interactive Digital Media. It all 
             started with an idea to create something that is unique, that no one 
             else thought it would be possible given the three month time frame. 
             We wanted to bring together all the things we learnt throughout our 
             course and use it for this project.
-        </p>
-        <img src="src/assets/png/Screenshot-finalbedroom.png" 
-             alt="screenshot of the visual for the final room in the VR game" 
-             className='max-w-xl my-12 imgframe mx-4'/>
-    </div>
+          </p>
+        </div>
+        <div className="flex flex-col ml-12">
+            <img src="src/assets/png/Screenshot-finalbedroom.png" 
+              alt="screenshot of the visual for the final room in the VR game" 
+              className='max-w-xl my-12 imgframe mx-4'/>
+        </div>
+      </div>
+
+    
     <div className="flex flex-row items-center">
-    <img src="src/assets/img/rendr-reaction-girl.jpeg" 
-             alt="girl with virtual reality headset" 
-             className='max-w-md my-12 imgframe mx-4'/>
-        <p className='py-4 text-xl pl-20 pr-4 text-right'>Doing a virtual reality project challenged us creatively and 
-            academically; from generating ideas, 3D designing the rooms, 
-            to programming the game mechanics. Before completing this project, 
-            none of the Retroverse team members were familiar with Unity or C#, 
-            which are the software and coding language used. Having started out 
-            as complete virtual reality beginners, we are exceptionally proud 
-            to present to you our final project. Everything that you experience 
-            in the Retroverse is built from scratch; the 3D models, game narrative, 
-            and functionality that has been coded line by line.
-        </p>        
-    </div>
+      <div className="flex flex-col ">
+            <img src="src/assets/png/Screenshot-pacman.png" 
+              alt="screenshot of visual of the pacman environment in the VR game" 
+              className='max-w-l my-12 imgframe mx-4'/>
+        </div>
+        <div className="flex flex-col ml-12">
+          <h1 className='font-bovine text-marinho text-left my-4'>The Challenge</h1>
+          <p className='my-4 text-l text-left'>None of us had worked with Unity or C# 
+            before this project. From the ground up, we learned how to design 3D 
+            environments, write scripts, and bring a narrative to life in VR.
+          </p>
+        </div>
+      </div>
+
+
+    <div className="flex flex-row items-center">
+        <div className="flex flex-col">
+          <h1 className='font-bovine text-marinho text-left my-4'>The Outcome</h1>
+          <p className='my-4 text-l text-left'>Every 3D model, every line of code, 
+            and every mechanic in Retroverse has been built from scratch. We’re 
+            proud to present this final project, born from equal parts 
+            creativity, persistence, and teamwork.
+          </p>
+        </div>
+        <div className="flex flex-col ml-12">
+            <img src="src/assets/png/Screenshot-bedroom.png" 
+              alt="screenshot of the visual for the initial room in the VR game" 
+              className='max-w-xl my-12 imgframe mx-4'/>
+        </div>
+      </div>
     </div>
     <TetrisPieces />
     </>
